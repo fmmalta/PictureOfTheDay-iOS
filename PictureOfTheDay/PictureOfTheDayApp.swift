@@ -4,7 +4,7 @@ import SwiftUI
 struct PictureOfTheDayApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeScreen(pictureProtocol: PictureDataService())
+            HomeView(pictureProtocol: PictureDataService())
         }
     }
 }

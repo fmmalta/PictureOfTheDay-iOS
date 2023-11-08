@@ -12,20 +12,19 @@ struct DetailView: View {
 			VStack(alignment: .leading) {
 				Text(picture.title)
 					.font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-					.frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
 				AsyncImage(url: URL(string: picture.url)) { image in
 					image
 						.resizable()
-						.frame(width: 300, height: 300)
+						.frame(height: 300, alignment: .center)
 						.clipShape(RoundedRectangle(cornerRadius: 10))
 				} placeholder: {
 					ProgressView()
 				}
 				Text(picture.explanation)
-					.frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+					.frame(alignment: .leading)
 			}
-			.padding()
-		}
+		}.padding(.horizontal, 10)
+		
 	}
 }
 
