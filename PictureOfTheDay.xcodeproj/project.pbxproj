@@ -57,7 +57,9 @@
 		A9E9D2A82AFBA44B00A9C4DF /* PictureOfTheDay */ = {
 			isa = PBXGroup;
 			children = (
-				A9E9D2B92AFBA4AC00A9C4DF /* Presentation */,
+				A9E9D2CF2AFC30DD00A9C4DF /* Model */,
+				A9E9D2CE2AFC04F600A9C4DF /* View */,
+				A9E9D2CB2AFBB9CB00A9C4DF /* ViewModel */,
 				A9E9D2A92AFBA44B00A9C4DF /* PictureOfTheDayApp.swift */,
 				A9E9D2AD2AFBA44D00A9C4DF /* Assets.xcassets */,
 				A9E9D2AF2AFBA44D00A9C4DF /* Preview Content */,
@@ -71,16 +73,6 @@
 				A9E9D2B02AFBA44D00A9C4DF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		A9E9D2B92AFBA4AC00A9C4DF /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				A9E9D2CF2AFC30DD00A9C4DF /* Model */,
-				A9E9D2CE2AFC04F600A9C4DF /* View */,
-				A9E9D2CB2AFBB9CB00A9C4DF /* ViewModel */,
-			);
-			path = Presentation;
 			sourceTree = "<group>";
 		};
 		A9E9D2CB2AFBB9CB00A9C4DF /* ViewModel */ = {
