@@ -2,6 +2,7 @@ import Foundation
 
 class HomeScreenViewModel: ObservableObject {
 	@Published var isLoading: Bool = false
+	@Published var pictures: [PictureModel] = []
 	let pictureProtocol: PictureProtocol
 	
 	init(pictureProtocol: PictureProtocol) {
@@ -9,6 +10,9 @@ class HomeScreenViewModel: ObservableObject {
 	}
 	
 	func getPictureOfTheDay() async throws -> [PictureModel] {
-		try await pictureProtocol.getImages()
+		isLoading = true
+		pictures = try await pictureProtocol.getImages()
+		isLoading = false
+		return pictures
 	}
 }

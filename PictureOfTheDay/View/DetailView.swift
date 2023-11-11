@@ -22,8 +22,8 @@ struct DetailView: View {
 				}
 				Text(picture.explanation)
 					.frame(alignment: .leading)
-			}
-		}.padding(.horizontal, 10)
+			}.padding(.horizontal, 20)
+		}
 		
 	}
 }

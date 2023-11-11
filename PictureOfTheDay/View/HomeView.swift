@@ -2,7 +2,6 @@ import SwiftUI
 
 struct HomeView: View {
 	@StateObject private var viewModel: HomeScreenViewModel
-	@State private var pictures: [PictureModel] = []
 	
 	init(pictureProtocol: PictureProtocol) {
 		_viewModel = StateObject(wrappedValue: HomeScreenViewModel(pictureProtocol: pictureProtocol))
@@ -13,7 +12,7 @@ struct HomeView: View {
 			if viewModel.isLoading {
 				ProgressView()
 			} else {
-				List(pictures.reversed(), id: \.self) { picture in
+				List(viewModel.pictures.reversed(), id: \.self) { picture in
 					HStack(spacing: 20) {
 						AsyncImage(url: URL(string: picture.url)) { phase in
 							if let image = phase.image {
@@ -45,9 +44,7 @@ struct HomeView: View {
 		}
 		.task {
 			do {
-				viewModel.isLoading = true
-				pictures = try await viewModel.getPictureOfTheDay()
-				viewModel.isLoading = false
+				_ = try await viewModel.getPictureOfTheDay()
 			} catch {
 				print(error)
 			}
